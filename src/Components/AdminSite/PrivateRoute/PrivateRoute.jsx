@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 const PrivateRoute = () => {
   const isLoggedIn = !!Cookies.get('accessToken') || !!Cookies.get('refreshToken');
   if (!isLoggedIn) {
-    return <Navigate to='/' />;
+    return <Navigate to='/login' />;
   }
   return <Outlet />;
 };
