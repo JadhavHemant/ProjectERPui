@@ -15,6 +15,7 @@ import LogoutButton from '../LogoutButton/LogoutButton'
 import { useEffect, useState } from 'react'
 import axiosInstance from '../utils/axiosInstance'
 import * as API from "../../Endpoint/Endpoint"
+import PrivateRoute from '../PrivateRoute/PrivateRoute'
 
 export default function NavigationBar() {
   const [uData, setData] = useState(null)
@@ -46,6 +47,7 @@ export default function NavigationBar() {
 
   return (
     <>
+    <PrivateRoute>
       <Disclosure as="nav" className="bg-gray-800 text-white shadow-md">
         {({ open, close }) => (   // ✅ access close() to manually close panel
           <>
@@ -147,7 +149,7 @@ export default function NavigationBar() {
           </>
         )}
       </Disclosure>
-
+</PrivateRoute>
       <Outlet />
     </>
   )
