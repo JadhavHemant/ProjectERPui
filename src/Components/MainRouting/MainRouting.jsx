@@ -7,6 +7,10 @@ import Sell from "../AdminSite/HomePage/Sell/Sell";
 import HomePage from "../AdminSite/HomePage/HomePage";
 import Users from "../AdminSite/HomePage/Users/Users";
 import PrivateRoute from "../PrivateRoute/PrivateRoute"; 
+import CompanyManagement from "../AdminSite/HomePage/Company/CompanyManagement";
+import ProductCategeory from "../AdminSite/HomePage/ProductCategeory/ProductCategeory";
+import Products from "../AdminSite/HomePage/Products/Products";
+import Reports from "../AdminSite/HomePage/Reports/Reports";
 
 const MainRouting = () => {
   return (
@@ -19,7 +23,11 @@ const MainRouting = () => {
           <Route path="/admin" element={<Navigation />}>
             <Route index element={<HomePage />} />
             <Route path="users" element={<Users />} />
-            <Route path="sell" element={<Sell />} />
+             <Route path="reports" element={<Reports />} />
+            <Route path="Sales" element={<Sell />} />
+            <Route path="company" element={<CompanyManagement />} />
+            <Route path="category" element={<ProductCategeory />} />
+            <Route path="Product" element={<Products />} />
           </Route>
         </Route>
         <Route path="*" element={<LoginPage />} />
@@ -29,3 +37,5 @@ const MainRouting = () => {
 };
 
 export default MainRouting;
+
+
